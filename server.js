@@ -1,16 +1,13 @@
 require( "dotenv" ).config();
 const express = require( "express" );
 const app = express();
-var ExpressPeerServer = require('peer').ExpressPeerServer;// for peers
+const ExpressPeerServer = require('peer').ExpressPeerServer;// for peers
 //????
 const cors = require( 'cors' );
 app.use( cors() );
 
 const server = require( "http" ).Server( app );
-var options = {
-    debug: true
-};// for peers
-app.use('/peerjs', ExpressPeerServer(server, options));// for peers
+
 // const io = require( "socket.io" )( server );
 //????
 const io = require( "socket.io" )( server, { cors: { origin: "*" } }  );
@@ -36,5 +33,9 @@ io.on( "connection", socket => {
     } );
 } );
 const port = process.env.PORT || 3000;
+const options = {
+    debug: true
+};// for peers
+app.use('/peerjs', ExpressPeerServer(server, options));// for peers
 // server.listen( 3000 );
 server.listen( port );
