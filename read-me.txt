@@ -1,0 +1,8 @@
+First part is writing the code from web-dev-simplified youtube video. It looks this exercise was successfully completed.
+
+Second part is trying to deploy. For that purporse changes made:
+1. code added:
+require( "dotenv" ).config();
+const port = process.env.PORT || 3000;
+server.listen( port );
+Procfile created.
