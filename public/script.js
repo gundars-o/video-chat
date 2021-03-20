@@ -6,7 +6,8 @@ const myPeer = new Peer( undefined, {
     // host: "localhost",
     // port: "3001"
     secure: true, 
-    host: 'gundars-video.herokuapp.com', 
+    host: 'gundars-video.herokuapp.com',
+    // https://gundars-video.herokuapp.com/
     port: 443,
 } );
 const myVideo = document.createElement( "video" );

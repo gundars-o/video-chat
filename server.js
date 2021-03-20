@@ -1,12 +1,16 @@
 require( "dotenv" ).config();
 const express = require( "express" );
 const app = express();
-
+var ExpressPeerServer = require('peer').ExpressPeerServer;// for peers
 //????
 const cors = require( 'cors' );
 app.use( cors() );
 
 const server = require( "http" ).Server( app );
+var options = {
+    debug: true
+};// for peers
+app.use('/peerjs', ExpressPeerServer(server, options));// for peers
 // const io = require( "socket.io" )( server );
 //????
 const io = require( "socket.io" )( server, { cors: { origin: "*" } }  );
