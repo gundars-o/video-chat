@@ -33,9 +33,9 @@ io.on( "connection", socket => {
     } );
 } );
 const port = process.env.PORT || 3000;
-const options = {
-    debug: true
-};// for peers
-app.use('/peerjs', ExpressPeerServer(server, options));// for peers
-// server.listen( 3000 );
+// const options = {
+//     debug: true
+// };// for peers
+// app.use('/peerjs', ExpressPeerServer(server, options));// for peers
+// // server.listen( 3000 );
 server.listen( port );
